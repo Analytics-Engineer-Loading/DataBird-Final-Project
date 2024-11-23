@@ -49,10 +49,10 @@ models:
           - not_null
 
       - name: active
-        data_type: int64
+        data_type: boolean
         description: The indicator whether the staff member is currently active.
         tests:
           - not_null
           - accepted_values:
-              values: [0, 1]
+              values: [True, False]
               quote: false

@@ -1,0 +1,13 @@
+models:
+  - name: int_sales__orders
+    description: This model contains information about orders.
+    columns:
+      - name: label_status
+        data_type: string
+        description: '{{ doc("label_status") }}'
+        tests:
+          - not_null
+
+      - name: shipped_late
+        data_type: boolean
+        description: Indicates if an order has been shipped late or not.

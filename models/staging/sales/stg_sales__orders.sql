@@ -3,7 +3,7 @@ SELECT
     , CAST(customer_id AS STRING) AS customer_id
     , CAST(store_id AS STRING) AS store_id
     , CAST(staff_id AS STRING) AS staff_id
-    , order_status AS status
+    , order_status AS code_status
     , order_date AS placed_date
     , required_date
     , CAST(

@@ -19,7 +19,7 @@ models:
           - not_null
           - relationships:
               field: brand_id
-              to: ref('stg_sales__brands')
+              to: ref('stg_production__brands')
 
       - name: category_id
         data_type: string
