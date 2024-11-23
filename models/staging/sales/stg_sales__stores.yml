@@ -1,0 +1,57 @@
+models:
+  - name: stg_sales__stores
+    description: This model contains information about stores.
+    columns:
+      - name: store_id
+        data_type: string
+        description: The id of the store.
+        tests:
+          - unique
+          - not_null
+
+      - name: name
+        data_type: string
+        description: The name of the store.
+        tests:
+          - unique
+          - not_null
+
+      - name: phone
+        data_type: string
+        description: The phone of the store.
+        tests:
+          - unique
+          - not_null
+
+      - name: email
+        data_type: string
+        description: The email address of the store.
+        tests:
+          - unique
+          - not_null
+
+      - name: street
+        data_type: string
+        description: The adress of the store. 
+        tests:
+          - not_null
+
+      - name: city
+        data_type: string
+        description: The city the store is located in.
+        tests:
+          - not_null
+
+      - name: state
+        data_type: string
+        description: The state the store is located in.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
+
+      - name: zip_code
+        data_type: string
+        description: The zip code associated with the city the store is located in.
+        tests:
+          - not_null
