@@ -1,0 +1,62 @@
+models:
+  - name: stg_sales__orders
+    description: This model contains information about orders.
+    columns:
+      - name: order_id
+        data_type: string
+        description: The id of the order.
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        data_type: string
+        description: The id of the customer who placed the order.
+        tests:
+          - not_null
+          - relationships:
+              field: customer_id
+              to: ref('stg_sales__customers')
+
+      - name: store_id
+        data_type: string
+        description: The id of the store the order has been placed at.
+        tests:
+          - not_null
+          - relationships:
+              field: store_id
+              to: ref('stg_sales__stores')
+
+      - name: staff_id
+        data_type: string
+        description: The id of the staff member who made the order.
+        tests:
+          - not_null
+          - relationships:
+              field: staff_id
+              to: ref('stg_sales__staffs')
+
+      - name: status
+        data_type: int64
+        description: The status of the order.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4]
+              quote: false
+
+      - name: placed_date
+        data_type: date
+        description: The date the order has been placed.
+        tests:
+          - not_null
+
+      - name: required_date
+        data_type: date
+        description: The date the order is required.
+        tests:
+          - not_null
+
+      - name: shipped_date
+        data_type: date
+        description: The date the order is shipped.

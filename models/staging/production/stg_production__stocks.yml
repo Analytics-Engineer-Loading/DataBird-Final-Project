@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_production__stocks
+    description: This model contains information about stocks.
+
+    columns:
+      - name: stock_id
+        data_type: string
+        description: '{{ doc("stock_id") }}'
+        tests:
+          - unique
+          - not_null
+
+      - name: store_id
+        data_type: string
+        description: The id of the store the stock is associated to.
+        tests:
+          - not_null
+          - relationships:
+              field: store_id
+              to: ref('stg_sales__stores')
+
+      - name: product_id
+        data_type: string
+        description: The id of the product in stock.
+        tests:
+          - not_null
+          - relationships:
+              field: product_id
+              to: ref('stg_production__products')
+
+      - name: quantity
+        data_type: int64
+        description: The quantity of the product available in stocks.

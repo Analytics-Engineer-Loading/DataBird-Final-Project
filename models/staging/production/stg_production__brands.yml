@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_production__brands
+    description: This model contains information about product brands.
+
+    columns:
+      - name: brand_id
+        data_type: string
+        description: The id of the brand.
+        tests:
+          - unique
+          - not_null
+
+      - name: name
+        data_type: string
+        description: The name of the brand.
+        tests:
+          - unique
+          - not_null

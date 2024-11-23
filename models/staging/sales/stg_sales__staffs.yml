@@ -1,0 +1,58 @@
+models:
+  - name: stg_sales__staffs
+    description: This model contains information about staff members.
+    columns:
+      - name: staff_id
+        data_type: string
+        description: The id of the staff member.
+        tests:
+          - unique
+          - not_null
+
+      - name: store_id
+        data_type: string
+        description: The id of the store the staff member works at.
+        tests:
+          - not_null
+          - relationships:
+              field: store_id
+              to: ref('stg_sales__stores')
+
+      - name: manager_id
+        data_type: string
+        description: The id of the manager of the staff member.
+
+      - name: first_name
+        data_type: string
+        description: The first name of the staff member.
+        tests:
+          - not_null
+
+      - name: last_name
+        data_type: string
+        description: The last name of the staff member.
+        tests:
+          - not_null
+
+      - name: email
+        data_type: string
+        description: The email address of the staff member.
+        tests:
+          - unique
+          - not_null
+
+      - name: phone
+        data_type: string
+        description: The phone of the staff member.
+        tests:
+          - unique
+          - not_null
+
+      - name: active
+        data_type: int64
+        description: The indicator whether the staff member is currently active.
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+              quote: false
