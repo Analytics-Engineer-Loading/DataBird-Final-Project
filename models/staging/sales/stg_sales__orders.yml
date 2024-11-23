@@ -36,7 +36,7 @@ models:
               field: staff_id
               to: ref('stg_sales__staffs')
 
-      - name: status
+      - name: code_status
         data_type: int64
         description: The status of the order.
         tests:

@@ -1,0 +1,15 @@
+models:
+  - name: int_sales__order_items
+    description: This model contains information about items present in each order.
+    columns:
+      - name: list_price
+        data_type: float64
+        description: The price of the product.
+        tests:
+          - not_null
+
+      - name: total_item_price
+        data_type: float64
+        description: '{{ doc("total_item_price") }}'
+        tests:
+          - not_null

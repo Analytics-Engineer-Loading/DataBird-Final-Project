@@ -6,6 +6,6 @@ SELECT
     , last_name
     , email
     , phone
-    , active
+    , CAST(active AS BOOLEAN) AS active
 FROM
     {{ source('local_bike', 'staffs') }}
