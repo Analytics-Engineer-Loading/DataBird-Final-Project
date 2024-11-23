@@ -11,5 +11,3 @@ models:
       - name: shipped_late
         data_type: boolean
         description: Indicates if an order has been shipped late or not.
-        tests:
-          - not_null

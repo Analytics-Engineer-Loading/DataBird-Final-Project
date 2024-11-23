@@ -54,5 +54,5 @@ models:
         tests:
           - not_null
           - accepted_values:
-              values: [0, 1]
+              values: [True, False]
               quote: false
