@@ -24,6 +24,9 @@ models:
       - name: phone
         data_type: string
         description: The phone of the customer.
+        tests:
+          - unique
+          - phone_format
 
       - name: email
         data_type: string

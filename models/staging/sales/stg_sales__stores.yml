@@ -22,6 +22,7 @@ models:
         tests:
           - unique
           - not_null
+          - phone_format
 
       - name: email
         data_type: string
@@ -29,6 +30,7 @@ models:
         tests:
           - unique
           - not_null
+          - corporate_email_format
 
       - name: street
         data_type: string

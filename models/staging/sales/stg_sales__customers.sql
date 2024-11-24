@@ -6,7 +6,7 @@ SELECT
         WHEN phone = 'NULL'
             THEN NULL
         ELSE phone
-        END AS phone
+      END AS phone
     , email
     , street
     , city
