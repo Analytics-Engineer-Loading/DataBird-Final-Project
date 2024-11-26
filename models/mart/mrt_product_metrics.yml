@@ -1,0 +1,63 @@
+models:
+  - name: mrt_product_metrics
+    description: This model contains metrics for each order item and gathers product dimensions.
+    columns:
+      - name: order_id
+        data_type: string
+        description: The id of the order.
+        tests:
+          - not_null
+
+      - name: placed_date
+        data_type: date
+        description: The date the order has been placed.
+        tests:
+          - not_null
+
+      - name: label_status
+        data_type: string
+        description: '{{ doc("label_status") }}'
+        tests:
+          - not_null
+
+      - name: brand_name
+        data_type: string
+        description: The name of the brand.
+        tests:
+          - not_null
+
+      - name: category_name
+        data_type: string
+        description: The name of the category.
+        tests:
+          - not_null
+
+      - name: product_name
+        data_type: string
+        description: The name of the product.
+        tests:
+          - not_null
+
+      - name: quantity
+        data_type: int64
+        description: The quantity of the product that has been bought.
+        tests:
+          - not_null
+
+      - name: list_price
+        data_type: float64
+        description: The price of the product.
+        tests:
+          - not_null
+
+      - name: discount
+        data_type: float64
+        description: The discount on the product's price.
+        tests:
+          - not_null
+
+      - name: total_item_price
+        data_type: float64
+        description: '{{ doc("total_item_price") }}'
+        tests:
+          - not_null
