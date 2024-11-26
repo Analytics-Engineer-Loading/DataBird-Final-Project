@@ -1,12 +1,10 @@
 SELECT
     o.order_id
     , o.placed_date
-    , o.shipped_late
     , o.label_status
     , b.name AS brand_name
     , c.name AS category_name
     , p.name AS product_name
-    , p.model_year
     , oi.quantity
     , oi.list_price
     , oi.discount
